@@ -1,9 +1,130 @@
 .address-book {
     list-style-type: none;
+    padding-top: 60px;
 
-    &__contact {}
-    &__avatar {}
-    &__name {}
-    &__phone {}
-    &__address {}
+    &__contact {
+        border-bottom: solid 1px #dedede;
+        padding: 18px;
+        display: flex;
+        align-items: center;
+    }
+    &__avatar {
+        border-radius: 50%;
+        height: 0px;
+        width: 0px;
+        overflow: hidden;
+        padding: 30px;
+        position: relative;
+        margin: 0;
+        margin-right: 18px;
+    }
+
+    &__image {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #dedede;
+    }
+
+    &__details {
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    &__name,
+    &__phone,
+    &__address {
+        color: #454545;
+        display: block;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__name {
+        color: #000000;
+        margin-bottom: 10px;
+    }
+    &__phone { margin-bottom: 8px; }
+    &__address {
+        font-size: 0.8em;
+        line-height: 1.5em;
+    }
+
+    &__address-line {
+        display: inline;
+    }
+}
+
+
+
+.select-field {
+    border: solid 1px #dedede;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.input-field, .submit-button  {
+    border: none;
+    outline: none;
+}
+
+.input-field {
+    border: solid 1px #dedede;
+    width: 100%;
+    display: block;
+    height: 40px;
+    border-radius: 5px;
+    text-indent: 18px;
+    padding-right: 60px;
+}
+
+.submit-button {
+    z-index: 10;
+    right: 9px;
+    top: 10px;
+    height: 40px;
+    width: 60px;
+    border-radius: 0 5px 5px 0;
+    background-color: #454545;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+
+    &:hover {
+        background-color: #666666;
+    }
+}
+
+.header {
+    background-color: #fff;
+    border-bottom: solid 1px #dedede;
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-left: 9px;
+    padding-right: 9px;
+    z-index: 5;
+
+    &__sort {
+        height: 60px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__label {
+        font-size: 12px;
+        margin-right: 9px;
+    }
+
+    &__search {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+    }
 }
