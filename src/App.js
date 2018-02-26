@@ -18,7 +18,10 @@ class App extends Component {
   render() {
     return (
       <main className="app">
-        <Header/>
+        <Header>
+          <Sort/>
+          <Search/>
+        </Header>
         <AddressBook contacts={this.state.contacts}/>
       </main>
     );
@@ -46,25 +49,32 @@ const AddressContact = ({contact}) => {
           </li>
 };
 
-const Header = ({}) => (
-  <form className="header">
-    <div className="header__sort">
-      <label className="header__label">Sort</label>
-      <select className="select-field">
-        <option value="name">Name</option>
-        <option value="phone">Phone</option>
-        <option value="address">Address</option>
-      </select>
-      <select className="select-field">
-        <option value="Asc">A-Z</option>
-        <option value="Dsc">Z-A</option>
-      </select>
-    </div>
-    <div className="header__search">
-        <input type="text" className="input-field"/>
-        <input type="submit" value="Search" className="submit-button"/>
-    </div>
-  </form>
+const Header = ({children}) => (
+  <div className="header">
+    {children}
+  </div>
+);
+
+const Sort = () => (
+  <div className="header__sort">
+    <label className="header__label">Sort</label>
+    <select className="select-field">
+      <option value="name">Name</option>
+      <option value="phone">Phone</option>
+      <option value="address">Address</option>
+    </select>
+    <select className="select-field">
+      <option value="Asc">A-Z</option>
+      <option value="Dsc">Z-A</option>
+    </select>
+  </div>
+);
+
+const Search = () => (
+  <div className="header__search">
+    <input type="text" className="input-field"/>
+    <input type="submit" value="Search" className="submit-button"/>
+  </div>
 );
 
 export default App;
